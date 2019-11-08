@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderContainer from 'HeaderContainer';
+import HeaderContainer from "./HeaderContainer";
 import styles from "./Recoco.module.css";
 
 // constant declarations
@@ -170,35 +170,38 @@ class CollapseContainer extends React.Component {
       ...headerStyle,
       ...this.props.headerInlineStyle
     };
-
     const mainInlineStyle = {
       ...mainStyle,
       ...this.props.mainInlineStyle
     };
-
     const iconClassName = this.state.isOpen
       ? `${styles.headerImgContainer} ${styles.open}`
       : styles.headerImgContainer;
 
     return (
-      <section
-        ref={this.componentRef}
-        className={styles.collapseContainer}
-        style={mainInlineStyle}
-      >
-        <HeaderContainer
-          headerStyle={headerInlineStyle}
-          headerTextStyle={headerText}
-          headerIconStyle={headerIcon}
-          styleClass={styles}
-          onHeaderClick={this.onHeaderClick}
-          headerText={this.props.headerText}
-          iconClassName={iconClassName}
-        />
-        <article style={contentInlineStyle} className={styles.collapseContent}>
-          {this.props.children}
-        </article>
-      </section>
+      <>
+        <section
+          ref={this.componentRef}
+          className={styles.collapseContainer}
+          style={mainInlineStyle}
+        >
+          <HeaderContainer
+            headerStyle={headerInlineStyle}
+            headerTextStyle={headerText}
+            headerIconStyle={headerIcon}
+            styleClass={styles}
+            onHeaderClick={this.onHeaderClick}
+            headerText={this.props.headerText}
+            iconClassName={iconClassName}
+          />
+          <article
+            style={contentInlineStyle}
+            className={styles.collapseContent}
+          >
+            {this.props.children}
+          </article>
+        </section>
+      </>
     );
   }
 }

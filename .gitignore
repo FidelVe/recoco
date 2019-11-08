@@ -1,2 +1,6 @@
 # Ignored files for git
 node_modules/
+
+# While in development, ignore build/ and example/
+build/
+example/
