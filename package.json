@@ -1,0 +1,23 @@
+{
+  "name": "recoco",
+  "version": "1.0.0",
+  "description": "recoco is a reusable and customizable React Collapsible Container",
+  "main": "src/Recoco.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "collapse",
+    "collapsible",
+    "acordion"
+  ],
+  "author": "FidelVe <me@fidel.engineer>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/preset-env": "^7.7.1"
+  }
+}
