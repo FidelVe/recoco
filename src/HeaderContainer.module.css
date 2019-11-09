@@ -1,0 +1,13 @@
+/* CSS module for HeaderContainer.js */
+.collapse-header {
+  display: flex;
+  /*equal to .collapse-container height - border-top-width*/
+  /* height: 52px; */
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 4px;
+}
+.header-label {
+  font-weight: bold;
+}

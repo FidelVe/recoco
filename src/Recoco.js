@@ -8,34 +8,6 @@ const LARGE_FONT = "20px";
 const SMALL_HEIGHT = "34px";
 const SMALL_FONT = "15px";
 
-// const HeaderContainer = props => {
-//   const {
-//     headerStyle,
-//     headerTextStyle,
-//     headerIconStyle,
-//     onHeaderClick,
-//     styleClass,
-//     headerText,
-//     iconClassName,
-//     headerAltChildren
-//   } = props;
-//   return (
-//     <header
-//       style={headerStyle}
-//       onClick={onHeaderClick}
-//       className={styleClass.collapseHeader}
-//     >
-//       <div>
-//         <p style={headerTextStyle} className={styleClass.headerLabel}>
-//           {headerText}
-//         </p>
-//         {headerAltChildren || null}
-//       </div>
-//       <div style={headerIconStyle} className={iconClassName}></div>
-//     </header>
-//   );
-// };
-
 class CollapseContainer extends React.Component {
   /*
    * Props available for this component:
@@ -64,7 +36,7 @@ class CollapseContainer extends React.Component {
     let params = {
       initialRender: true,
       maxHeightWhenCollapsed: "",
-      maxHeightWhenUncollapsed: ""
+      maxHeightWhenExpanded: props.large ? LARGE_HEIGHT : SMALL_HEIGHT
     };
 
     params.maxHeightWhenCollapsed =
@@ -125,11 +97,10 @@ class CollapseContainer extends React.Component {
     // Header label calculations
     inlineStyles.headerText.fontSize =
       this.props.large === true ? LARGE_FONT : SMALL_FONT;
-    // ********************
 
     // Set the maxHeight depending on the state (collapsed/uncollapsed)
     inlineStyles.mainStyle.maxHeight = this.state.isOpen
-      ? this.baseParams.maxHeightWhenUncollapsed
+      ? this.baseParams.maxHeightWhenExpanded
       : this.baseParams.maxHeightWhenCollapsed;
 
     return inlineStyles;
@@ -146,8 +117,14 @@ class CollapseContainer extends React.Component {
     // This is the maximum height for the collapse container, it will depend
     // on the content of itself + and extra margin for handling browser
     // resize.
-    this.baseParams.maxHeightWhenUncollapsed =
-      parseInt(computedContentStyle.getPropertyValue("height")) * 2;
+    // TODO: DELETE THIS OLD METHOD WHEN SURE THE NEW METHOD IS NOT BUGGY
+    // this.baseParams.maxHeightWhenExpanded =
+    //   parseInt(computedContentStyle.getPropertyValue("height")) * 2;
+    this.baseParams.maxHeightWhenExpanded =
+      parseInt(contentEl.offsetHeight) >
+      parseInt(this.baseParams.maxHeightWhenExpanded)
+        ? parseInt(contentEl.offsetHeight) * 2
+        : this.baseParams.maxHeightWhenExpanded;
   }
 
   render() {
@@ -175,28 +152,28 @@ class CollapseContainer extends React.Component {
       ...this.props.mainInlineStyle
     };
     const iconClassName = this.state.isOpen
-      ? `${styles.headerImgContainer} ${styles.open}`
-      : styles.headerImgContainer;
+      ? `${styles["header-img-container"]} ${styles.open}`
+      : styles["header-img-container"];
 
     return (
       <>
         <section
           ref={this.componentRef}
-          className={styles.collapseContainer}
+          className={styles["collapse-container"]}
           style={mainInlineStyle}
         >
           <HeaderContainer
             headerStyle={headerInlineStyle}
             headerTextStyle={headerText}
             headerIconStyle={headerIcon}
-            styleClass={styles}
+            // styleClass={styles}
             onHeaderClick={this.onHeaderClick}
             headerText={this.props.headerText}
             iconClassName={iconClassName}
           />
           <article
             style={contentInlineStyle}
-            className={styles.collapseContent}
+            className={styles["collapse-content"]}
           >
             {this.props.children}
           </article>

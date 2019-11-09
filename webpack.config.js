@@ -6,42 +6,49 @@ const path = require("path");
 module.exports = {
   entry: {
     recoco: "./src/Recoco.js",
-    test: "./src/App.js"
+    example: "./src/App.js"
   },
   output: {
-    filename: "[name].js",
+    filename: "[name]/[name].js",
     path: path.resolve(__dirname, "build")
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|example)/,
+        exclude: /node_modules/,
         use: ["babel-loader"]
       },
       {
-        test: /\.css$/,
-        exclude: /(node_modules|example)/,
+        // For pure CSS without modules
+        test: /\.css$/i,
+        exclude: /\.module\.css$/i,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        // For CSS modules
+        test: /\.module\.css$/i,
         use: [
-          { loader: "style-loader" },
+          "style-loader",
           { loader: "css-loader", options: { modules: true } }
         ]
       },
       {
         test: /\.(png|jpg|gif)$/,
-        exclude: /(node_modules|example)/,
         use: { loader: "url-loader" }
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: "example/index.html",
       template: path.join(__dirname, "/src/index.html")
-    })
-    // new CleanWebpackPlugin()
+    }),
+    new CleanWebpackPlugin()
   ],
   devServer: {
-    contentBase: "./build",
+    contentBase: path.join(__dirname, "build"),
+    openPage: "example/index.html",
     open: true
   }
 };

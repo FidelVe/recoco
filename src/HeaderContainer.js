@@ -1,11 +1,5 @@
 import React from "react";
-// import styles from "./Recoco.module.css";
-
-// constant declarations
-// const LARGE_HEIGHT = "58px";
-// const LARGE_FONT = "20px";
-// const SMALL_HEIGHT = "34px";
-// const SMALL_FONT = "15px";
+import styles from "./HeaderContainer.module.css";
 
 const HeaderContainer = props => {
   const {
@@ -22,10 +16,10 @@ const HeaderContainer = props => {
     <header
       style={headerStyle}
       onClick={onHeaderClick}
-      className={styleClass.collapseHeader}
+      className={styles["collapse-header"]}
     >
       <div>
-        <p style={headerTextStyle} className={styleClass.headerLabel}>
+        <p style={headerTextStyle} className={styles["header-label"]}>
           {headerText}
         </p>
         {headerAltChildren || null}
