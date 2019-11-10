@@ -10,11 +10,19 @@
   },
   "keywords": [
     "React",
+    "react-component",
     "collapse",
     "collapsible",
     "acordion"
   ],
-  "author": "FidelVe <me@fidel.engineer>",
+  "author": "Fidel Sanchez-Bueno - FidelVe <me@fidel.engineer>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FidelVe/recoco"
+  },
+  "bugs": {
+    "url": "https://github.com/FidelVe/recoco/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.7.0",
