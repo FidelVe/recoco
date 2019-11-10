@@ -9,7 +9,7 @@ module.exports = {
     filename: "recoco.js",
     path: path.resolve(__dirname, "dist/lib"),
     library: "recoco",
-    libraryTarget: 'commonjs'
+    libraryTarget: 'commonjs2'
   },
   externals: {
     react: "react",
