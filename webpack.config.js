@@ -4,13 +4,15 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: {
-    recoco: "./src/Recoco.js",
-    example: "./src/App.js"
-  },
+  entry: path.resolve(__dirname, "src/lib/Recoco.js"),
   output: {
-    filename: "[name]/[name].js",
-    path: path.resolve(__dirname, "build")
+    filename: "recoco.js",
+    path: path.resolve(__dirname, "dist/lib"),
+    library: "recoco",
+    libraryTarget: 'commonjs'
+  },
+  externals: {
+    react: "react",
   },
   module: {
     rules: [
@@ -39,16 +41,16 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: "example/index.html",
-      template: path.join(__dirname, "/src/index.html")
-    }),
-    new CleanWebpackPlugin()
-  ],
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     filename: "example/index.html",
+  //     template: path.join(__dirname, "/src/index.html")
+  //   }),
+  //   new CleanWebpackPlugin()
+  // ],
   devServer: {
-    contentBase: path.join(__dirname, "build"),
-    openPage: "example/index.html",
+    contentBase: path.join(__dirname, "dist"),
+    openPage: "foo",
     open: true
   }
 };

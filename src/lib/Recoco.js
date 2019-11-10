@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderContainer from "../component/Header/Header";
+import HeaderContainer from "./component/Header/Header";
 import styles from "./Recoco.module.css";
 
 // constant declarations

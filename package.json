@@ -2,11 +2,11 @@
   "name": "recoco",
   "version": "1.0.0",
   "description": "recoco is a reusable and customizable React Collapsible Container",
-  "main": "build/recoco/recoco.js",
+  "main": "dist/lib/recoco.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "dev": "webpack-dev-server --mode=development",
+    "build": "webpack --mode=production"
   },
   "keywords": [
     "React",
