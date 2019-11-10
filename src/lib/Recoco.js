@@ -117,9 +117,6 @@ class CollapseContainer extends React.Component {
     // This is the maximum height for the collapse container, it will depend
     // on the content of itself + and extra margin for handling browser
     // resize.
-    // TODO: DELETE THIS OLD METHOD WHEN SURE THE NEW METHOD IS NOT BUGGY
-    // this.baseParams.maxHeightWhenExpanded =
-    //   parseInt(computedContentStyle.getPropertyValue("height")) * 2;
     this.baseParams.maxHeightWhenExpanded =
       parseInt(contentEl.offsetHeight) >
       parseInt(this.baseParams.maxHeightWhenExpanded)
@@ -151,13 +148,8 @@ class CollapseContainer extends React.Component {
       ...mainStyle,
       ...this.props.mainInlineStyle
     };
-    // Remove this const (iconClassName)
-    const iconClassName = this.state.isOpen
-      ? `${styles["header-img-container"]} ${styles.open}`
-      : styles["header-img-container"];
 
     return (
-      // Remove iconClassName and styleClass
       <>
         <section
           ref={this.componentRef}
@@ -168,10 +160,8 @@ class CollapseContainer extends React.Component {
             headerStyle={headerInlineStyle}
             headerTextStyle={headerText}
             headerIconStyle={headerIcon}
-            // styleClass={styles}
             onHeaderClick={this.onHeaderClick}
             headerText={this.props.headerText}
-            iconClassName={iconClassName}
             headerIconIsOpen={this.state.isOpen}
           />
           <article

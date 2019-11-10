@@ -2,15 +2,12 @@ import React from "react";
 import styles from "./Header.module.css";
 
 const HeaderContainer = props => {
-  // TODO: Remove iconClassName and styleClass
   const {
     headerStyle,
     headerTextStyle,
     headerIconStyle,
     onHeaderClick,
-    styleClass,
     headerText,
-    iconClassName,
     headerAltChildren
   } = props;
 

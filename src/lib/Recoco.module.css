@@ -10,27 +10,6 @@
   width: 100%;
   transition: max-height 1s;
 }
-/* TODO: remove commented section */
-/* .header-img-container { */
-/*   display: block; */
-/*   background-image: url(./images/ic_add_black_48dp.png); */
-/*   width: 40px; */
-/*   height: 40px; */
-/*   border-radius: 50%; */
-/*   background-size: 48px 48px; */
-/*   background-position: -4px; */
-/*   margin-right: 2px; */
-/* } */
-/* .header-img-container:hover { */
-/*   background-image: url(./images/ic_add_white_48dp.png); */
-/*   background-color: #000; */
-/* } */
-/* .header-img-container.open { */
-/*   background-image: url(./images/ic_remove_black_48dp.png); */
-/* } */
-/* .header-img-container.open:hover { */
-/*   background-image: url(./images/ic_remove_white_48dp.png); */
-/* } */
 .collapse-content {
   display: flex;
   flex-flow: column nowrap;
