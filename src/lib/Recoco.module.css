@@ -1,0 +1,48 @@
+/* CSS module for collapse-container.js */
+/*
+ * TODO: move the collapse logic from .collapse-content to .collapse-container. The height needs to be a hardcoded value in pixel, only if I use SASS I can use variables to calculate the hight
+ */
+.collapse-container {
+  background-color: #ebecf0;
+  border-radius: 4px 4px 0px 0px;
+  margin-bottom: 20px;
+  overflow-y: hidden;
+  width: 100%;
+  transition: max-height 1s;
+}
+/* TODO: remove commented section */
+/* .header-img-container { */
+/*   display: block; */
+/*   background-image: url(./images/ic_add_black_48dp.png); */
+/*   width: 40px; */
+/*   height: 40px; */
+/*   border-radius: 50%; */
+/*   background-size: 48px 48px; */
+/*   background-position: -4px; */
+/*   margin-right: 2px; */
+/* } */
+/* .header-img-container:hover { */
+/*   background-image: url(./images/ic_add_white_48dp.png); */
+/*   background-color: #000; */
+/* } */
+/* .header-img-container.open { */
+/*   background-image: url(./images/ic_remove_black_48dp.png); */
+/* } */
+/* .header-img-container.open:hover { */
+/*   background-image: url(./images/ic_remove_white_48dp.png); */
+/* } */
+.collapse-content {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1em 2em;
+}
+.collapse-content > h4 {
+  margin-bottom: 1em;
+}
+.collapse-content pre {
+  overflow-x: scroll;
+  max-width: 600px;
+}
+.collapse-content pre > code {
+  font-size: 0.8em;
+}

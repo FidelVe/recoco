@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderContainer from "./HeaderContainer";
+import HeaderContainer from "../component/Header/Header";
 import styles from "./Recoco.module.css";
 
 // constant declarations
@@ -151,11 +151,13 @@ class CollapseContainer extends React.Component {
       ...mainStyle,
       ...this.props.mainInlineStyle
     };
+    // Remove this const (iconClassName)
     const iconClassName = this.state.isOpen
       ? `${styles["header-img-container"]} ${styles.open}`
       : styles["header-img-container"];
 
     return (
+      // Remove iconClassName and styleClass
       <>
         <section
           ref={this.componentRef}
@@ -170,6 +172,7 @@ class CollapseContainer extends React.Component {
             onHeaderClick={this.onHeaderClick}
             headerText={this.props.headerText}
             iconClassName={iconClassName}
+            headerIconIsOpen={this.state.isOpen}
           />
           <article
             style={contentInlineStyle}

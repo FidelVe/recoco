@@ -1,0 +1,32 @@
+/* CSS module for Header.js */
+.collapse-header {
+  display: flex;
+  /*equal to .collapse-container height - border-top-width*/
+  /* height: 52px; */
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 4px;
+}
+.header-label {
+  font-weight: bold;
+}
+.header-img-container {
+  display: block;
+  background-image: url(./images/ic_add_black_48dp.png);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: 48px 48px;
+  background-position: -4px;
+}
+.header-img-container:hover {
+  background-image: url(./images/ic_add_white_48dp.png);
+  background-color: #000;
+}
+.header-img-container.open {
+  background-image: url(./images/ic_remove_black_48dp.png);
+}
+.header-img-container.open:hover {
+  background-image: url(./images/ic_remove_white_48dp.png);
+}

@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./HeaderContainer.module.css";
+import styles from "./Header.module.css";
 
 const HeaderContainer = props => {
+  // TODO: Remove iconClassName and styleClass
   const {
     headerStyle,
     headerTextStyle,
@@ -12,6 +13,11 @@ const HeaderContainer = props => {
     iconClassName,
     headerAltChildren
   } = props;
+
+  const headerIconClassName = props.headerIconIsOpen
+    ? `${styles["header-img-container"]} ${styles.open}`
+    : `${styles["header-img-container"]}`;
+
   return (
     <header
       style={headerStyle}
@@ -24,7 +30,7 @@ const HeaderContainer = props => {
         </p>
         {headerAltChildren || null}
       </div>
-      <div style={headerIconStyle} className={iconClassName}></div>
+      <div style={headerIconStyle} className={headerIconClassName}></div>
     </header>
   );
 };
