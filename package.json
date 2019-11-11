@@ -5,7 +5,7 @@
   "main": "dist/lib/recoco.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode=development",
+    "dev": "echo \"webpack-dev-server --mode=development\" && exit 1",
     "build": "npm run build-npm && npm run build-docs",
     "build-npm": "webpack --mode=production",
     "build-docs": "webpack --mode=production --config ./webpack.config.docs.js",

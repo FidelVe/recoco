@@ -48,9 +48,9 @@ module.exports = {
   //   }),
   //   new CleanWebpackPlugin()
   // ],
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    openPage: "foo",
-    open: true
-  }
+  // devServer: {
+  //   contentBase: path.join(__dirname, "dist"),
+  //   openPage: "foo",
+  //   open: true
+  // }
 };

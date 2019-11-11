@@ -18,6 +18,11 @@ class CollapseContainer extends React.Component {
    *  - headerInlineStyle: {}
    *  - contentInlineStyle: {}
    *  - mainInlineStyle: {},
+   *  - mainElementId = 'recoco-main-id',
+   *  - headerElementId = 'recoco-header-id',
+   *  - contentElementId = 'recoco-content-id'
+   *
+   *
    */
   constructor(props) {
     super(props);
@@ -155,6 +160,7 @@ class CollapseContainer extends React.Component {
           ref={this.componentRef}
           className={styles["collapse-container"]}
           style={mainInlineStyle}
+          id={this.props.mainElementId}
         >
           <HeaderContainer
             headerStyle={headerInlineStyle}
@@ -163,10 +169,12 @@ class CollapseContainer extends React.Component {
             onHeaderClick={this.onHeaderClick}
             headerText={this.props.headerText}
             headerIconIsOpen={this.state.isOpen}
+            id={this.props.headerElementId}
           />
           <article
             style={contentInlineStyle}
             className={styles["collapse-content"]}
+            id={this.props.contentElementId}
           >
             {this.props.children}
           </article>
@@ -177,13 +185,16 @@ class CollapseContainer extends React.Component {
 }
 
 CollapseContainer.defaultProps = {
-  headerText: "default value for the header text",
+  headerText: "default header text",
   styledBorder: true,
   borderColor: "#000",
   large: true,
   headerInlineStyle: {},
   contentInlineStyle: {},
-  mainInlineStyle: {}
+  mainInlineStyle: {},
+  mainElementId: "recoco-main-id",
+  headerElementId: "recoco-header-id",
+  contentElementId: "recoco-content-id"
 };
 
 export default CollapseContainer;
