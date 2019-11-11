@@ -3,10 +3,10 @@ import styles from "./Header.module.css";
 
 // variables
 const headerElem = [
-  { title: "ABOUT", url: "#about" },
-  { title: "EXAMPLES", url: "#examples" },
+  // { title: "EXAMPLES", url: "#examples" },
   { title: "INSTALLATION", url: "#about" },
-  { title: "GITHUB", url: "#github" }
+  { title: "PROPS", url: "#props" },
+  { title: "GITHUB", url: "https:/github.com/FidelVe/recoco" }
 ];
 
 const Header = () => {
@@ -18,15 +18,17 @@ const Header = () => {
           React Collapsible Container
         </p>
       </div>
-      {headerElem.map((elem, key) => {
-        return (
-          <div className={styles["elem-container"]} key={key}>
-            <p className={styles["element"]}>
-              <a href={elem.url}>{elem.title}</a>
-            </p>
-          </div>
-        );
-      })}
+      <div className={styles["sub-container"]}>
+        {headerElem.map((elem, key) => {
+          return (
+            <div className={styles["elem-container"]} key={key}>
+              <p className={styles["element"]}>
+                <a href={elem.url}>{elem.title}</a>
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

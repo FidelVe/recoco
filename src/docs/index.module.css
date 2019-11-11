@@ -1,1 +1,10 @@
 /* CSS module for index.js */
+.main {
+  width: 90vw;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.example-1 {
+  max-width: 450px;
+  margin: 0 auto;
+}

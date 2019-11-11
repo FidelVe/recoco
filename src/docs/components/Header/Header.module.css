@@ -4,10 +4,17 @@
 /* } */
 .main-container {
   /* background-color: rgba(0, 0, 0, 0.1); */
+  /* width: 100vw; */
   display: flex;
   flex-flow: row nowrap;
   border-bottom: 4px solid #ccc;
   margin-bottom: 1em;
+}
+.sub-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
 }
 .elem-container:nth-child(1) {
   margin-right: auto;

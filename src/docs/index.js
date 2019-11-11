@@ -11,7 +11,7 @@ import styles from "./index.module.css";
 
 const WebPage = () => {
   return (
-    <main id="main">
+    <main className={styles["main"]}>
       <Header />
       <section className={styles["section"]} id="about">
         <h1>recoco</h1>
@@ -26,11 +26,23 @@ const WebPage = () => {
           can control its size by simply creating a container around it and
           expecify a desired width, or just let it expand.
         </p>
+        <p>
+          I'm currently working on adding content to this page to explain in
+          details how to use <i>recoco</i>, so far this is a quick overview
+        </p>
       </section>
       <section className={styles["section"]} id="examples">
-        <h2>Examples</h2>
+        <h3>Examples</h3>
         <p>
-          <i>coming soon..</i>
+          This is the default style of <i>recoco</i>
+        </p>
+        <div className={styles["example-1"]}>
+          <CollapseContainer headerText="Header Text">
+            <p>Text inside the content</p>
+          </CollapseContainer>
+        </div>
+        <p>
+          <i>more examples coming soon..</i>
         </p>
       </section>
       <section className={styles["section"]} id="installation">
@@ -56,10 +68,32 @@ const WebPage = () => {
             &lt;/div&gt; ) }
           </code>
         </pre>
+        <h3>Known issues</h3>
+        <p>
+          If you are using your own <i>webpack+babel</i> configuration,{" "}
+          <i>recoco</i> will work perfectly, but currently <i>recoco</i> doesn't
+          work with <i>React</i> projects created using the{" "}
+          <i>create-react-app</i> tool, am aware of it and will fix it when I
+          have the chance, but in the meantime if you want to collaborate you
+          can open a pull request to fix it!
+        </p>
       </section>
-      <CollapseContainer>
-        <p>Text inside the content</p>
-      </CollapseContainer>
+      <section className={styles["section"]} id="props">
+        <h2>Props</h2>
+        <p>
+          <i>recoco</i> can be customize by passing values to its <i>props</i>.
+          The default values are as follow:
+        </p>
+        <ul>
+          <li>headerText</li>
+          <li>styledBorder</li>
+          <li>borderColor</li>
+          <li>large</li>
+          <li>headerInlineStyle</li>
+          <li>contentInlineStyle</li>
+          <li>mainInlineStyle</li>
+        </ul>
+      </section>
     </main>
   );
 };
