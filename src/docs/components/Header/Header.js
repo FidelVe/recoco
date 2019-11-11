@@ -6,7 +6,7 @@ const headerElem = [
   // { title: "EXAMPLES", url: "#examples" },
   { title: "INSTALLATION", url: "#about" },
   { title: "PROPS", url: "#props" },
-  { title: "GITHUB", url: "https:/github.com/FidelVe/recoco" }
+  { title: "GITHUB", url: "https://www.github.com/FidelVe/recoco" }
 ];
 
 const Header = () => {
