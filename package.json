@@ -10,7 +10,6 @@
     "build-npm": "webpack --mode=production",
     "build-docs": "webpack --mode=production --config ./webpack.config.docs.js",
     "dev-docs": "webpack-dev-server --mode=development --config ./webpack.config.docs.js"
-
   },
   "keywords": [
     "React",
@@ -35,21 +34,23 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-prismjs": "^1.1.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^1.0.0",
+    "url-loader": "^2.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
-    "url-loader": "^2.2.0"
+    "webpack-dev-server": "^3.9.0"
   },
   "peerDependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   },
   "dependencies": {
+    "prismjs": "^1.17.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   }
