@@ -4,10 +4,39 @@ import ReactDOM from "react-dom";
 // Import compoments
 import CollapseContainer from "../lib/Recoco";
 import Header from "./components/Header/Header";
+import PrismWrapper from "./components/PrismWrapper/PrismWrapper";
 
 // Import styles
 import "./styles.css";
 import styles from "./index.module.css";
+
+// Code blocks
+const codeExamples = {
+  one: `>npm install recoco`,
+  two: `import React from "react";
+import CollapseContainer from "recoco";
+
+const RecocoExample = () => {
+  return (
+    <div>
+      <h1>Recoco</h1>
+      <p>This is paragraph</p>
+      <CollapseContainer
+        headerText="This is the header"
+      >
+        <p>This is the content</p>
+      </CollapseContainer>
+    </div>
+  )
+}`
+};
+
+// recoco cammelCase inline style object
+const recocoInlineStyles = {
+  header: {},
+  header: {},
+  content: {}
+};
 
 const WebPage = () => {
   return (
@@ -52,22 +81,17 @@ const WebPage = () => {
           your project with <i>npm</i>, Or simply copy the distribution file
           from the github repo.
         </p>
-        <pre>
-          <code>&gt;npm install recoco</code>
-        </pre>
+        <PrismWrapper lang="shell">{codeExamples.one}</PrismWrapper>
         <h3>How to use</h3>
         <p>
           Using <i>recoco</i> is pretty simple, just import it into your{" "}
           <i>React</i> component, and then use it anywhere you like:
         </p>
-        <pre>
-          <code>
-            import React from "react"; import CollapseContainer from "recoco";
-            const App = () => return ( &lt;div&gt; &lt;h1&gt;Recoco&lt;/h1&gt;
-            &lt;p&gt;This is paragraph&lt;/p&gt; &lt;CollapseContainer /&gt;
-            &lt;/div&gt; ) }
-          </code>
-        </pre>
+        <PrismWrapper>{codeExamples.two}</PrismWrapper>
+        <p>The above example will output the following component</p>
+        <CollapseContainer headerText="This is the header">
+          <p>This is the content</p>
+        </CollapseContainer>
         <h3>Known issues</h3>
         <p>
           If you are using your own <i>webpack+babel</i> configuration,{" "}
