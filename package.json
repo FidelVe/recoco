@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "build-docs": "webpack --mode=production --config ./webpack.config.docs.js",
+    "dev-docs": "webpack-dev-server --mode=development --config ./webpack.config.docs.js"
+
   },
   "keywords": [
     "React",
