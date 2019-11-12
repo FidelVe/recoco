@@ -1,6 +1,6 @@
 {
   "name": "recoco",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "recoco is a reusable and customizable React Collapsible Container",
   "main": "dist/lib/recoco.js",
   "scripts": {
