@@ -14,6 +14,7 @@ import styles from "./index.module.css";
 const codeExamples = {
   one: `>npm install recoco`,
   two: `import React from "react";
+import ReactDOM from "react-dom";
 import CollapseContainer from "recoco";
 
 const RecocoExample = () => {
@@ -28,7 +29,12 @@ const RecocoExample = () => {
       </CollapseContainer>
     </div>
   )
-}`
+}
+
+ReactDOM.render(<RecocoExample />, YourAppRootId) : false;
+`,
+  three: `styledBorder={false}`,
+  four: `large={false}`
 };
 
 // recoco cammelCase inline style object
@@ -63,7 +69,9 @@ const WebPage = () => {
       <section className={styles["section"]} id="examples">
         <h3>Examples</h3>
         <p>
-          This is the default style of <i>recoco</i>
+          <i>recoco</i> exposes various <i>props</i> (listed{" "}
+          <a href="#props">here</a>) to make it easy to customize. By default it
+          will display as follow:
         </p>
         <div className={styles["example-1"]}>
           <CollapseContainer headerText="Header Text">
@@ -71,7 +79,59 @@ const WebPage = () => {
           </CollapseContainer>
         </div>
         <p>
-          <i>more examples coming soon..</i>
+          Theres a smaller version also that you can use by passing{" "}
+          <code className="language-javascript">{codeExamples.four}</code> as a
+          prop.
+        </p>
+        <div className={styles["example-1"]}>
+          <CollapseContainer headerText="Header Text" large={false}>
+            <p>Text inside the content</p>
+          </CollapseContainer>
+        </div>
+        <p>
+          If you want to change the color of the top-border, just pass a css
+          compatible color value to the "borderColor" prop.
+        </p>
+        <p>
+          Here's an example passing{" "}
+          <code className="language-javascript">borderColor="red"</code>.
+        </p>
+        <div className={styles["example-1"]}>
+          <CollapseContainer headerText="Header Text" borderColor="red">
+            <p>Text inside the content</p>
+          </CollapseContainer>
+        </div>
+        <div className={styles["example-1"]}>
+          <CollapseContainer
+            headerText="Header Text"
+            borderColor="red"
+            large={false}
+          >
+            <p>Text inside the content</p>
+          </CollapseContainer>
+        </div>
+        <p>
+          If you simple don't want the styled border, pass the following as a
+          prop <code className="language-javascript">{codeExamples.three}</code>
+          .
+        </p>
+        <div className={styles["example-1"]}>
+          <CollapseContainer headerText="Header Text" styledBorder={false}>
+            <p>Text inside the content</p>
+          </CollapseContainer>
+        </div>
+        <div className={styles["example-1"]}>
+          <CollapseContainer
+            headerText="Header Text"
+            styledBorder={false}
+            large={false}
+          >
+            <p>Text inside the content</p>
+          </CollapseContainer>
+        </div>
+        <p>
+          There's many othe ways you can customize <i>recoco</i>, by using the
+          various props listed <a href="#props">here</a>.
         </p>
       </section>
       <section className={styles["section"]} id="installation">
@@ -106,16 +166,131 @@ const WebPage = () => {
         <h2>Props</h2>
         <p>
           <i>recoco</i> can be customize by passing values to its <i>props</i>.
-          The default values are as follow:
+          Here's a list of all the props that can be passed:
         </p>
         <ul>
-          <li>headerText</li>
-          <li>styledBorder</li>
-          <li>borderColor</li>
-          <li>large</li>
-          <li>headerInlineStyle</li>
-          <li>contentInlineStyle</li>
-          <li>mainInlineStyle</li>
+          <li>
+            headerText:
+            <ul>
+              <li>Default type: string.</li>
+              <li>Default value: "default header text"</li>
+              <li>
+                Description: Content to be displayed in the header. Is a{" "}
+                <i>p</i> element wrapped inside a <i>div</i>
+              </li>
+            </ul>
+          </li>
+          <li>
+            styledBorder:
+            <ul>
+              <li>Default type: boolean.</li>
+              <li>Default value: true</li>
+              <li>Description: true will display a colored top-border</li>
+            </ul>
+          </li>
+          <li>
+            borderColor:
+            <ul>
+              <li>Default type: CSS compatible color input.</li>
+              <li>Default value: "#000"</li>
+              <li>
+                Description: If styledBorder=true, passing a color here will
+                change the default color of the top-border for the value you
+                pass
+              </li>
+            </ul>
+          </li>
+          <li>
+            large:
+            <ul>
+              <li>Default type: boolean.</li>
+              <li>Default value: true</li>
+              <li>
+                Description: true will render the default version, if false is
+                passed it will render a smaller version which is roughly half
+                the size
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            headerInlineStyle:
+            <ul>
+              <li>Default type: object.</li>
+              <li>Default value: Empty object</li>
+              <li>
+                Description: You can pass a camelCase style object of css
+                values. This values will be inyected as inline styles into the
+                header element
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            contentInlineStyle:
+            <ul>
+              <li>Default type: object.</li>
+              <li>Default value: Empty object</li>
+              <li>
+                Description: You can pass a camelCase style object of css
+                values. This values will be inyected as inline styles into the
+                content element
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            mainInlineStyle:
+            <ul>
+              <li>Default type: object.</li>
+              <li>Default value: Empty object</li>
+              <li>
+                Description: You can pass a camelCase style object of css
+                values. This values will be inyected as inline styles into the
+                main element that wraps around both the header and content
+                elements
+              </li>
+            </ul>
+          </li>
+          <li>
+            mainElementId:
+            <ul>
+              <li>Default type: string.</li>
+              <li>Default value: "recoco-main-id"</li>
+              <li>
+                Description: This is the id html tag for the main element, you
+                can use the default one or modify it. You can use this value to
+                define CSS properties in an external css file or target the
+                element in the DOM.
+              </li>
+            </ul>
+          </li>
+          <li>
+            headerElementId:
+            <ul>
+              <li>Default type: string.</li>
+              <li>Default value: "recoco-header-id"</li>
+              <li>
+                Description: This is the id html tag for the main element, you
+                can use the default one or modify it. You can use this value to
+                define CSS properties in an external css file or target the
+                element in the DOM.
+              </li>
+            </ul>
+          </li>
+          <li>
+            contentElementId:
+            <ul>
+              <li>Default type: string.</li>
+              <li>Default value: "recoco-content-id"</li>
+              <li>
+                Description: This is the id html tag for the content element,
+                you can use the default one or modify it. You can use this value
+                to define CSS properties in an external css file or target the
+                element in the DOM.
+              </li>
+            </ul>
+          </li>
         </ul>
       </section>
     </main>

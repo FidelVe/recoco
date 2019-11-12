@@ -8,7 +8,8 @@ const HeaderContainer = props => {
     headerIconStyle,
     onHeaderClick,
     headerText,
-    headerAltChildren
+    headerAltChildren,
+    id
   } = props;
 
   const headerIconClassName = props.headerIconIsOpen
@@ -20,6 +21,7 @@ const HeaderContainer = props => {
       style={headerStyle}
       onClick={onHeaderClick}
       className={styles["collapse-header"]}
+      id={id}
     >
       <div>
         <p style={headerTextStyle} className={styles["header-label"]}>

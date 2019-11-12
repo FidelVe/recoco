@@ -8,6 +8,18 @@
   display: flex;
   flex-flow: column nowrap;
 }
+#recoco-main-id {
+  color: inherit;
+}
+#recoco-header-id {
+  color: inherit;
+}
+#recoco-header-id p {
+  margin-bottom: 4px;
+}
+#recoco-content-id {
+  color: inherit;
+}
 /* 
  * ************************************
  * Generic styles 

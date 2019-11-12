@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 // variables
 const headerElem = [
   // { title: "EXAMPLES", url: "#examples" },
-  { title: "INSTALLATION", url: "#about" },
+  { title: "INSTALLATION", url: "#installation" },
   { title: "PROPS", url: "#props" },
   { title: "GITHUB", url: "https://www.github.com/FidelVe/recoco" }
 ];
