@@ -49,45 +49,45 @@ If you are using your own *webpack+babel* configuration, *recoco* will work perf
 *recoco* can be customize by passing values to its *props*. Here's a list of all the props that can be passed:
 
 * headerText:
-  - Default type: string.
-  - Default value: "default header text"
-  - Description: Content to be displayed in the header. Is a *p* element wrapped inside a *div*.
+  * Default type: string.
+  * Default value: "default header text"
+  * Description: Content to be displayed in the header. Is a *p* element wrapped inside a *div*.
 * styledBorder:
-  - Default type: boolean.
-  - Default value: true
-  - Description: true will display a colored top-border
+  * Default type: boolean.
+  * Default value: true
+  * Description: true will display a colored top-border
 * borderColor:
-  - Default type: CSS compatible color input.
-  - Default value: "#000"
-  - Description: If styledBorder=true, passing a color here will change the default color of the top-border for the value you pass.
+  * Default type: CSS compatible color input.
+  * Default value: "#000"
+  * Description: If styledBorder=true, passing a color here will change the default color of the top-border for the value you pass.
 * large:
-  - Default type: boolean.
-  - Default value: true
-  - Description: true will render the default version, if false is passed it will render a smaller version which is roughly half the size.
+  * Default type: boolean.
+  * Default value: true
+  * Description: true will render the default version, if false is passed it will render a smaller version which is roughly half the size.
 * headerInlineStyle:
-  - Default type: object.
-  - Default value: Empty object
-  - Description: You can pass a camelCase style object of css values. This values will be inyected as inline styles into the header element.
+  * Default type: object.
+  * Default value: Empty object
+  * Description: You can pass a camelCase style object of css values. This values will be inyected as inline styles into the header element.
 * contentInlineStyle:
-  - Default type: object.
-  - Default value: Empty object
-  - Description: You can pass a camelCase style object of css values. This values will be inyected as inline styles into the content element.
+  * Default type: object.
+  * Default value: Empty object
+  * Description: You can pass a camelCase style object of css values. This values will be inyected as inline styles into the content element.
 * mainInlineStyle:
-  - Default type: object.
-  - Default value: Empty object
-  - Description: You can pass a camelCase style object of css values. This values will be inyected as inline styles into the main element that wraps around both the header and content elements.
+  * Default type: object.
+  * Default value: Empty object
+  * Description: You can pass a camelCase style object of css values. This values will be inyected as inline styles into the main element that wraps around both the header and content elements.
 * mainElementId:
-  - Default type: string.
-  - Default value: "recoco-main-id"
-  - Description: This is the id html tag for the main element, you can use the default one or modify it. You can use this value to define CSS properties in an external css file or target the element in the DOM.
+  * Default type: string.
+  * Default value: "recoco-main-id"
+  * Description: This is the id html tag for the main element, you can use the default one or modify it. You can use this value to define CSS properties in an external css file or target the element in the DOM.
 * headerElementId:
-  - Default type: string.
-  - Default value: "recoco-header-id"
-  - Description: This is the id html tag for the main element, you can use the default one or modify it. You can use this value to define CSS properties in an external css file or target the element in the DOM.
+  * Default type: string.
+  * Default value: "recoco-header-id"
+  * Description: This is the id html tag for the main element, you can use the default one or modify it. You can use this value to define CSS properties in an external css file or target the element in the DOM.
 * contentElementId:
-  - Default type: string.
-  - Default value: "recoco-content-id"
-  - Description: This is the id html tag for the content element, you can use the default one or modify it. You can use this value to define CSS properties in an external css file or target the element in the DOM.
+  * Default type: string.
+  * Default value: "recoco-content-id"
+  * Description: This is the id html tag for the content element, you can use the default one or modify it. You can use this value to define CSS properties in an external css file or target the element in the DOM.
 
 ## Built With
 
